@@ -32,32 +32,32 @@ public class Elements extends JFrame {
         System.out.println(new Date()+"[ElementContainer][setupKeyPad] Setting up keypad...");
         //------------setting font, color and style of buttons-------
         ArrayList<String> mapKeys = Buttons.getMapKeysByType(this.map, "numeric");
-        this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.GREY);
+        this.prepareButtons(mapKeys, FontAndColours.FONT_TYPE_1, FontAndColours.GREY);
 
         mapKeys = Buttons.getMapKeysByType(this.map, "operator");
-        this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.WHITE);
+        this.prepareButtons(mapKeys, FontAndColours.FONT_TYPE_1, FontAndColours.WHITE);
 
         mapKeys = Buttons.getMapKeysByType(this.map, "number_modifier");
-        this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.GREY);
+        this.prepareButtons(mapKeys, FontAndColours.FONT_TYPE_1, FontAndColours.GREY);
 
         mapKeys = Buttons.getMapKeysByType(this.map, "answer");
-        this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.LIGHT_BLUE);
+        this.prepareButtons(mapKeys,  FontAndColours.FONT_TYPE_1, FontAndColours.CYAN);
 
-        this.prepareButtonByKey("exit", Helper.KEY_FONT_MD, Helper.RED);
-        this.prepareButtonByKey("clear", Helper.KEY_FONT_MD, Color.ORANGE);
-        this.prepareButtonByKey("delete", Helper.KEY_FONT_MD, Color.YELLOW);
+        this.prepareButtonByKey("exit", FontAndColours.FONT_TYPE_1, FontAndColours. BRIGHT_RED);
+        this.prepareButtonByKey("clear", FontAndColours.FONT_TYPE_1, Color.ORANGE);
+        this.prepareButtonByKey("delete", FontAndColours.FONT_TYPE_1, Color.YELLOW);
 
         mapKeys = Buttons.getMapKeysByType(this.map, "single_operator");
-        this.prepareButtons(mapKeys, Helper.KEY_FONT_MD, Helper.WHITE);
+        this.prepareButtons(mapKeys, FontAndColours.FONT_TYPE_1, FontAndColours.WHITE);
 
-        this.prepareButtonByKey("percent", Helper.KEY_FONT_MD, Helper.WHITE);
+        this.prepareButtonByKey("percent", FontAndColours.FONT_TYPE_1, FontAndColours.WHITE);
 
         this.numPad = new JPanel();
-        int keyPadY = (int) (this.getHeight() * Helper.SCREEN_RATIO);
-        int keyPadHeight = (int) (this.getHeight() * Helper.KEYPAD_RATIO);
+        int keyPadY = (int) (this.getHeight() * FontAndColours.SCREEN_RATIO);
+        int keyPadHeight = (int) (this.getHeight() * FontAndColours.NUMPAD_RATIO);
         this.add(this.numPad).setBounds(0, keyPadY, this.getWidth(), keyPadHeight);
         this.numPad.setLayout(null);
-        this.numPad.setBackground(Helper.darkGrey);
+        this.numPad.setBackground(FontAndColours.BACKGROUND_COLOR);
 
         this.fixButtonsPlacement();
 
