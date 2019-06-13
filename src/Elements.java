@@ -15,7 +15,10 @@ public class Elements extends JFrame {
     //Properties
     Map <String, Buttons> map;
     private JPanel numPad = new JPanel();
-    JPanel information = new JPanel ();
+    private JPanel information = new JPanel ();
+
+    JTextField tf1 = new JTextField ();
+    JTextField tf2 = new JTextField ();
 
     //Constructor
     public Elements (int width, int height) {
