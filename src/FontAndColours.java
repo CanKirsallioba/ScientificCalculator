@@ -24,6 +24,9 @@ public class FontAndColours {
     final static double INPUT_RATIO = 0.3;
     final static double OUTOUT_RATIO = 0.7;
 
+    final static int BUTTON_HEIGHT = 40;
+    final static int BUTTON_PER_LINE = 5;
+
     public static String operatorFinder (String string, ArrayList <String> elements) {
         for (String element : elements) {
             if (string.contains ( element )) {
