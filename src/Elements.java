@@ -52,7 +52,7 @@ public class Elements extends JFrame {
 
         this.prepareButtonByKey("EXIT", FontAndColours.FONT_TYPE_1, FontAndColours. BRIGHT_RED);
         this.prepareButtonByKey("CLEAR", FontAndColours.FONT_TYPE_1, Color.ORANGE);
-        this.prepareButtonByKey("DELETE", FontAndColours.FONT_TYPE_1, Color.YELLOW);
+        this.prepareButtonByKey("DEL", FontAndColours.FONT_TYPE_1, Color.YELLOW);
 
         mapKeys = Buttons.getMapKeysByType(this.map, "advancedOperator");
         this.prepareButtons(mapKeys, FontAndColours.FONT_TYPE_1, FontAndColours.WHITE);
@@ -128,13 +128,13 @@ public class Elements extends JFrame {
         System.out.println(new Date()+"[ElementContainer][fixButtonsPlacement] Placing buttons...");
 
         int btnWidth = this.numPad.getWidth() / FontAndColours.BUTTON_PER_LINE;
-        this.numPad.add(this.map.get("clear")).setBounds(0, 0, btnWidth, FontAndColours.BUTTON_HEIGHT);
-        this.numPad.add(this.map.get("delete")).setBounds(btnWidth, 0, btnWidth, FontAndColours.BUTTON_HEIGHT);
+        this.numPad.add(this.map.get("CLEAR")).setBounds(0, 0, btnWidth, FontAndColours.BUTTON_HEIGHT);
+        this.numPad.add(this.map.get("DEL")).setBounds(btnWidth, 0, btnWidth, FontAndColours.BUTTON_HEIGHT);
 
-        String[] commonButtons = {"1", "2", "3", "add", "sub", "4", "5", "6", "mul", "div", "7", "8", "9", "mod", "0", "point", "percent", "equal"};
+        String[] commonButtons = {"1", "2", "3", "ADD", "SUB", "4", "5", "6", "MUL", "DIV", "7", "8", "9", "MOD", "0", "POINT", "PERCENT", "EQUAL"};
         this.setButtonByKeyList(commonButtons, FontAndColours.BUTTON_HEIGHT);
 
-        String[] scientificButtons = {"sin", "cos", "tan", "ln", "log", "one_by_n", "square", "cube", "sqrt", "exit"};
+        String[] scientificButtons = {"sin", "cos", "tan", "ln", "log", "ONE_OVER_N", "SQUARE", "CUBE", "SQRT", "EXIT"};
         this.setButtonByKeyList(scientificButtons, 6 * FontAndColours.BUTTON_HEIGHT);
         System.out.println(new Date()+"[ElementContainer][fixButtonsPlacement] Done!");
     }
@@ -150,7 +150,7 @@ public class Elements extends JFrame {
             int x = colCounter * btnWidth, y = rowCounter * btnHeight + startY;
 
 
-            if(buttonKey.equalsIgnoreCase("mod") || buttonKey.equalsIgnoreCase("equal")){
+            if(buttonKey.equalsIgnoreCase("MOD") || buttonKey.equalsIgnoreCase("EQUAL")){
                 this.numPad.add(this.map.get(buttonKey)).setBounds(x, y, btnWidth*2, btnHeight);
                 counter +=2;
             }else{
