@@ -85,7 +85,7 @@ public class Elements extends JFrame {
         this.tf1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         this.tf1.setText("0");
         this.tf1.setEditable(false);
-        this.tf1.setBackground(FontAndColours.GHOST_GREEN);
+        this.tf1.setBackground(FontAndColours.ORANGE);
         this.tf1.setForeground(Color.BLACK);
 
         //Output display
@@ -96,7 +96,7 @@ public class Elements extends JFrame {
         this.tf2.setFont(FontAndColours.DEFAULT_FONT);
         this.tf2.setText("0");
         this.tf2.setEditable(false);
-        this.tf2.setBackground(FontAndColours.GHOST_GREEN);
+        this.tf2.setBackground(FontAndColours.ORANGE);
         this.tf2.setForeground(Color.BLACK);
         System.out.println(new Date()+"[ElementContainer][setupDisplay] Done!");
     }
