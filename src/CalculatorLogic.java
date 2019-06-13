@@ -8,12 +8,12 @@ public class CalculatorLogic extends Elements implements ActionListener {
 
     public CalculatorLogic (int width, int height) {
         super (width, height);
-        this.addActionListener();
+        addActionListenerToAll();
     }
 
-    private void addActionListener() {
-        for (String key : this.map.keySet()) {
-            this.map.get(key).addActionListener(this);
+    private void addActionListenerToAll() {
+        for (String key : map.keySet()) {
+            map.get(key).addActionListener(this);
         }
     }
 

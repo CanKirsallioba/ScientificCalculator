@@ -22,7 +22,7 @@ public class FontAndColours {
     final static double NUMPAD_RATIO = 0.75;
     final static double INFORMATION_RATIO = 0.05;
     final static double INPUT_RATIO = 0.3;
-    final static double OUTOUT_RATIO = 0.7;
+    final static double OUTPUT_RATIO = 0.7;
 
     final static int BUTTON_HEIGHT = 40;
     final static int BUTTON_PER_LINE = 5;

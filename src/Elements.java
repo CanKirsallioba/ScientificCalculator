@@ -24,8 +24,14 @@ public class Elements extends JFrame {
     public Elements (int width, int height) {
         this.setLayout ( null );
         this.setResizable ( false );
-        this.setDefaultCloseOperation ( EXIT_ON_CLOSE );
+        this.setDefaultCloseOperation ( WindowConstants.EXIT_ON_CLOSE );
         this.setSize ( width, height );
+        this.setBackground ( FontAndColours.BACKGROUND_COLOR );
+
+        this.map = Buttons.getAll ();
+        this.createNumPad ();
+        this.setupFooter ();
+        this.setupDisplay ();
 
     }
 
@@ -44,14 +50,14 @@ public class Elements extends JFrame {
         mapKeys = Buttons.getMapKeysByType(this.map, "answer");
         this.prepareButtons(mapKeys,  FontAndColours.FONT_TYPE_1, FontAndColours.CYAN);
 
-        this.prepareButtonByKey("exit", FontAndColours.FONT_TYPE_1, FontAndColours. BRIGHT_RED);
-        this.prepareButtonByKey("clear", FontAndColours.FONT_TYPE_1, Color.ORANGE);
-        this.prepareButtonByKey("delete", FontAndColours.FONT_TYPE_1, Color.YELLOW);
+        this.prepareButtonByKey("EXIT", FontAndColours.FONT_TYPE_1, FontAndColours. BRIGHT_RED);
+        this.prepareButtonByKey("CLEAR", FontAndColours.FONT_TYPE_1, Color.ORANGE);
+        this.prepareButtonByKey("DELETE", FontAndColours.FONT_TYPE_1, Color.YELLOW);
 
-        mapKeys = Buttons.getMapKeysByType(this.map, "single_operator");
+        mapKeys = Buttons.getMapKeysByType(this.map, "advancedOperator");
         this.prepareButtons(mapKeys, FontAndColours.FONT_TYPE_1, FontAndColours.WHITE);
 
-        this.prepareButtonByKey("percent", FontAndColours.FONT_TYPE_1, FontAndColours.WHITE);
+        this.prepareButtonByKey("PERCENT", FontAndColours.FONT_TYPE_1, FontAndColours.WHITE);
 
         this.numPad = new JPanel();
         int keyPadY = (int) (this.getHeight() * FontAndColours.SCREEN_RATIO);
@@ -65,6 +71,35 @@ public class Elements extends JFrame {
         System.out.println(new Date()+"[ElementContainer][setupKeyPad] Done!");
     }
 
+    private void setupDisplay() {
+        System.out.println(new Date()+"[ElementContainer][setupDisplay] Setting up display screens...");
+        JPanel screen = new JPanel();
+        screen.setLayout(null);
+        int screenHeight = (int) (this.getHeight() * FontAndColours.SCREEN_RATIO);
+        this.add(screen).setBounds(0, 0, this.getWidth(), screenHeight);
+        //Input display
+        screen.add(tf1);
+        int inputDisplayHeight = (int) (screen.getHeight() * FontAndColours.INPUT_RATIO);
+        this.tf1.setBounds(0, 0, screen.getWidth(), inputDisplayHeight);
+        this.tf1.setHorizontalAlignment(JTextField.LEFT);
+        this.tf1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        this.tf1.setText("0");
+        this.tf1.setEditable(false);
+        this.tf1.setBackground(FontAndColours.GHOST_GREEN);
+        this.tf1.setForeground(Color.BLACK);
+
+        //Output display
+        screen.add(this.tf2);
+        int outputDisplayHeight = (int) (screen.getHeight() * FontAndColours.OUTPUT_RATIO);
+        this.tf2.setBounds(0, inputDisplayHeight, screen.getWidth(), outputDisplayHeight);
+        this.tf2.setHorizontalAlignment(JTextField.RIGHT);
+        this.tf2.setFont(FontAndColours.DEFAULT_FONT);
+        this.tf2.setText("0");
+        this.tf2.setEditable(false);
+        this.tf2.setBackground(FontAndColours.GHOST_GREEN);
+        this.tf2.setForeground(Color.BLACK);
+        System.out.println(new Date()+"[ElementContainer][setupDisplay] Done!");
+    }
     private void setupFooter(){
         System.out.println(new Date()+"[ElementContainer][setupFooter] Setting up footer...");
         int footerY = (int) (this.getHeight() * (FontAndColours.SCREEN_RATIO + FontAndColours.NUMPAD_RATIO));
