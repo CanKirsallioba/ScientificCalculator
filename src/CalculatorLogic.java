@@ -34,7 +34,7 @@ public class CalculatorLogic extends Elements implements ActionListener {
         }else if(pureName.equalsIgnoreCase("delete")){
             this.deleteInput();
 
-        }else if(buttonType.equalsIgnoreCase("single_operator")){
+        }else if(buttonType.equalsIgnoreCase("advancedOperator")){
             this.singleOperation(pressedButton);
 
         }else if(buttonType.equalsIgnoreCase("numeric")){
