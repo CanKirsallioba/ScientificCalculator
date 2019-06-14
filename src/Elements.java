@@ -82,7 +82,7 @@ public class Elements extends JFrame {
         int inputDisplayHeight = (int) (screen.getHeight() * FontAndColours.INPUT_RATIO);
         this.tf1.setBounds(0, 0, screen.getWidth(), inputDisplayHeight);
         this.tf1.setHorizontalAlignment(JTextField.LEFT);
-        this.tf1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        this.tf1.setFont(new Font("MonoSpaced", Font.PLAIN, 20));
         this.tf1.setText("0");
         this.tf1.setEditable(false);
         this.tf1.setBackground(FontAndColours.ORANGE);
