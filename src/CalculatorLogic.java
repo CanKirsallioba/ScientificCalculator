@@ -1,7 +1,6 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class CalculatorLogic extends Elements implements ActionListener {
     private Logic logic = new Logic();
@@ -23,7 +22,7 @@ public class CalculatorLogic extends Elements implements ActionListener {
         String buttonType = pressedButton.buttonType;
         String pureName = pressedButton.nameOfElement;
 
-        System.out.println(new Date ()+"[Calculator][actionPerformed] Button clicked :" + e.getActionCommand()+" "+e.getSource());
+        //System.out.println(new Date ()+"[Calculator][actionPerformed] Button clicked :" + e.getActionCommand()+" "+e.getSource());
 
         if(pureName.equalsIgnoreCase("exit")){
             System.exit(0);
@@ -132,10 +131,6 @@ public class CalculatorLogic extends Elements implements ActionListener {
 
     private boolean isOutputClear(){
         return this.tf2.getText().equals("0");
-    }
-
-    private boolean isBothDisplayClear(){
-        return this.isInputClear() && this.isOutputClear();
     }
 
     private String getInputFirstOperator(){

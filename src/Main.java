@@ -5,6 +5,5 @@ public class Main {
         calculator.getContentPane ().setBackground ( FontAndColours.BACKGROUND_COLOR);
         calculator.setLocationRelativeTo ( null );
         calculator.setVisible ( true );
-        //calculator.setIcon (  );
     }
 }

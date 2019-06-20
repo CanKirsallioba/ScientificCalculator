@@ -19,9 +19,6 @@ public class Buttons extends JButton {
         return "{ButtonType: " + this.buttonType + ", nameOfElement: " + this.nameOfElement + ", button:" + this.getText() + ", message: " + this.message + "}";
     }
 
-    public boolean isOperator() {
-        return this.buttonType.equalsIgnoreCase ( "operator" );
-    }
 
     public static Map<String, Buttons> getAll() {
         Map <String, Buttons> map = new HashMap <String, Buttons>();

@@ -6,10 +6,8 @@ public class FontAndColours {
     /* FONT CONSTANTS */
     final static Font DEFAULT_FONT = new Font ("MonoSpaced", Font.BOLD, 30);
     final static Font FONT_TYPE_1 = new Font ("MonoSpaced", Font.BOLD, 15);
-    final static Font FONT_TYPE_2 = new Font ("MonoSpaced", Font.BOLD, 10);
 
     /*COLOUR CONSTANTS*/
-    final static Color GHOST_GREEN = new Color ( 0, 120, 0 );
     final static Color CYAN = new Color (0,255,255);
     final static Color BRIGHT_RED = new Color (225,66,66);
     final static Color WHITE = new Color (255,255,255);

@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.Year;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -36,8 +35,6 @@ public class Elements extends JFrame {
     }
 
     private void createNumPad() {
-        System.out.println(new Date()+"[ElementContainer][setupKeyPad] Setting up keypad...");
-        //------------setting font, color and style of buttons-------
         ArrayList<String> mapKeys = Buttons.getMapKeysByType(this.map, "numeric");
         this.prepareButtons(mapKeys, FontAndColours.FONT_TYPE_1, FontAndColours.GREY);
 
@@ -68,11 +65,9 @@ public class Elements extends JFrame {
 
         this.fixButtonsPlacement();
 
-        System.out.println(new Date()+"[ElementContainer][setupKeyPad] Done!");
     }
 
     private void setupDisplay() {
-        System.out.println(new Date()+"[ElementContainer][setupDisplay] Setting up display screens...");
         JPanel screen = new JPanel();
         screen.setLayout(null);
         int screenHeight = (int) (this.getHeight() * FontAndColours.SCREEN_RATIO);
@@ -98,10 +93,9 @@ public class Elements extends JFrame {
         this.tf2.setEditable(false);
         this.tf2.setBackground(FontAndColours.ORANGE);
         this.tf2.setForeground(Color.BLACK);
-        System.out.println(new Date()+"[ElementContainer][setupDisplay] Done!");
     }
+
     private void setupFooter(){
-        System.out.println(new Date()+"[ElementContainer][setupFooter] Setting up footer...");
         int footerY = (int) (this.getHeight() * (FontAndColours.SCREEN_RATIO + FontAndColours.NUMPAD_RATIO));
         int footerHeight = (int)(this.getHeight() * FontAndColours.INFORMATION_RATIO);
         this.add(information).setBounds(0, footerY, this.getWidth(), footerHeight);
@@ -109,7 +103,6 @@ public class Elements extends JFrame {
         JLabel copyrightTag = new JLabel("\u00A9 "+ Year.now().getValue()+"  CanKirsallioba");
         copyrightTag.setForeground(FontAndColours.CYAN);
         this.information.add(copyrightTag).setBounds(0, 0, this.information.getWidth(), this.information.getHeight());
-        System.out.println(new Date()+"[ElementContainer][setupFooter] Done!");
     }
 
     private void prepareButtons(ArrayList<String> buttonHolderMapKeys, Font font, Color bgColor) {
@@ -125,8 +118,6 @@ public class Elements extends JFrame {
     }
 
     private void fixButtonsPlacement() {
-        System.out.println(new Date()+"[ElementContainer][fixButtonsPlacement] Placing buttons...");
-
         int btnWidth = this.numPad.getWidth() / FontAndColours.BUTTON_PER_LINE;
         this.numPad.add(this.map.get("CLEAR")).setBounds(0, 0, btnWidth, FontAndColours.BUTTON_HEIGHT);
         this.numPad.add(this.map.get("DEL")).setBounds(btnWidth, 0, btnWidth, FontAndColours.BUTTON_HEIGHT);
@@ -136,14 +127,12 @@ public class Elements extends JFrame {
 
         String[] scientificButtons = {"sin", "cos", "tan", "ln", "log", "ONE_OVER_N", "SQUARE", "CUBE", "SQRT", "EXIT"};
         this.setButtonByKeyList(scientificButtons, 6 * FontAndColours.BUTTON_HEIGHT);
-        System.out.println(new Date()+"[ElementContainer][fixButtonsPlacement] Done!");
     }
 
     private void setButtonByKeyList(String[] buttonsKeys, int startY){
         int btnPerLine = FontAndColours.BUTTON_PER_LINE;
         int btnWidth = this.numPad.getWidth() / btnPerLine;
         int btnHeight = FontAndColours.BUTTON_HEIGHT;
-        int extraBlock = this.totalExtraBlock(buttonsKeys.length, btnPerLine);
 
         int rowCounter = 0, colCounter = 0, counter = 0;
         for(String buttonKey: buttonsKeys){
@@ -161,16 +150,4 @@ public class Elements extends JFrame {
             colCounter = counter % btnPerLine == 0 ? 0 : colCounter + 1;
         }
     }
-
-    private int totalExtraBlock(int numberOfBtn, int btnPerLine){
-        return numberOfBtn - (numberOfBtn % btnPerLine);
-    }
-
-    void setIcon(String iconPath){
-        ImageIcon img = new ImageIcon(iconPath);
-        this.setIconImage(img.getImage());
-    }
-
-
-
 }
