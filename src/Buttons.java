@@ -92,9 +92,9 @@ public class Buttons extends JButton {
     /**
      * Get screen text list by type array list.
      *
-     * @param buttonMap the button map
-     * @param type      the type
-     * @return the array list
+     * @param buttonMap the map of the buttons
+     * @param type  button type.
+     * @return the array list of the buttons.
      */
     static ArrayList<String> getScreenTextListByType(Map<String, Buttons> buttonMap, String type){
         ArrayList<String> textList = new ArrayList<>();

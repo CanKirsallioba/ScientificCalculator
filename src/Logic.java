@@ -1,7 +1,19 @@
 import java.util.Arrays;
 import java.util.Date;
 
+/**
+ * The type Logic.
+ * @author Can Kirsallioba
+ * @version 14.06.2019
+ */
 public class Logic {
+    /**
+     * Compute the given values in the desired way.
+     *
+     * @param name  the name of teh operation
+     * @param input the input given by the user
+     * @return the answer to the query.
+     */
     String compute (String name, String input) {
         double inputVal = Double.parseDouble ( input );
 
@@ -35,6 +47,14 @@ public class Logic {
         return inputVal;
     }
 
+    /**
+     * Compute the result by looking at the given values.
+     *
+     * @param operand1 the operand 1
+     * @param operand2 the operand 2
+     * @param operator the operator
+     * @return the answer
+     */
     String compute(String operand1, String operand2, String operator){
         try {
             double parsedOperand1 = Double.parseDouble(operand1);
