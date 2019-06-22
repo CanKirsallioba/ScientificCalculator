@@ -2,9 +2,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
+/**
+ * The type Calculator logic.
+ *
+ * @author Can Kirsallioba
+ * @version 14.06.2019
+ */
 public class CalculatorLogic extends Elements implements ActionListener {
     private Logic logic = new Logic();
 
+    /**
+     * Instantiates a new Calculator logic.
+     *
+     * @param width  the width
+     * @param height the height
+     */
     public CalculatorLogic (int width, int height) {
         super (width, height);
         addActionListenerToAll();
@@ -21,8 +33,6 @@ public class CalculatorLogic extends Elements implements ActionListener {
         Buttons pressedButton = (Buttons) e.getSource();
         String buttonType = pressedButton.buttonType;
         String pureName = pressedButton.nameOfElement;
-
-        //System.out.println(new Date ()+"[Calculator][actionPerformed] Button clicked :" + e.getActionCommand()+" "+e.getSource());
 
         if(pureName.equalsIgnoreCase("exit")){
             System.exit(0);

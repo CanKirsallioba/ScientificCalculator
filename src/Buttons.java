@@ -3,9 +3,23 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The type Buttons.
+ * @author Can Kirsallioba
+ * @version 14.06.2019
+ */
 public class Buttons extends JButton {
+    /**
+     * The Button type.
+     */
     String buttonType;
+    /**
+     * The Name of element.
+     */
     String nameOfElement;
+    /**
+     * The Message.
+     */
     String message;
 
     private Buttons(String buttonType, String nameOfElement, String buttonText, String message) {
@@ -20,6 +34,11 @@ public class Buttons extends JButton {
     }
 
 
+    /**
+     * This method has all the elements in the calculator.
+     *
+     * @return map of the elements
+     */
     public static Map<String, Buttons> getAll() {
         Map <String, Buttons> map = new HashMap <String, Buttons>();
         for (int i = 0; i <= 9  ; i++) {
@@ -52,6 +71,13 @@ public class Buttons extends JButton {
         return map;
     }
 
+    /**
+     * Gets map keys by type.
+     *
+     * @param buttonMap the map of the buttons
+     * @param type is the type of the key value.
+     * @return an arrayList of the map keys.
+     */
     static ArrayList<String> getMapKeysByType(Map<String, Buttons> buttonMap, String type) {
         ArrayList<String> keyList = new ArrayList<>();
         for (String mapKey : buttonMap.keySet()) {
@@ -63,6 +89,13 @@ public class Buttons extends JButton {
         return keyList;
     }
 
+    /**
+     * Get screen text list by type array list.
+     *
+     * @param buttonMap the button map
+     * @param type      the type
+     * @return the array list
+     */
     static ArrayList<String> getScreenTextListByType(Map<String, Buttons> buttonMap, String type){
         ArrayList<String> textList = new ArrayList<>();
         for (String mapKey : buttonMap.keySet()) {
