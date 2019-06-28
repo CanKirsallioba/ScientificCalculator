@@ -11,3 +11,10 @@ Here are some examples of the capablities of the calculator:
 1) sin30 : 
 
 [!sin30](https://user-images.githubusercontent.com/49129982/60359867-ef6bf880-99e2-11e9-8fcc-40aa9a4782c9.png)
+
+
+2) log(n) :
+
+[log(n)](https://user-images.githubusercontent.com/49129982/60360038-65705f80-99e3-11e9-8577-b368e5ee64d5.png)
+
+3) 
