@@ -12,13 +12,13 @@ Here are some examples of the capablities of the calculator:
 </br>
 1) sin30 : </br>
 ![sin30](https://user-images.githubusercontent.com/49129982/60359867-ef6bf880-99e2-11e9-8fcc-40aa9a4782c9.png)
-</br>
+
 2) log(n) : </br>
 ![log(n)](https://user-images.githubusercontent.com/49129982/60360038-65705f80-99e3-11e9-8577-b368e5ee64d5.png)
-</br>
+
 3) x^2 : </br>
 ![x^2](https://user-images.githubusercontent.com/49129982/60360123-9fd9fc80-99e3-11e9-8b90-ed8f1d328b66.png)
-</br>
+
 4) 1/n : </br>
 ![1/n](https://user-images.githubusercontent.com/49129982/60360261-019a6680-99e4-11e9-9865-019c632d8777.png)
 
